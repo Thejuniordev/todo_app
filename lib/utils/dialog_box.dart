@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable, prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 import 'package:todo_app/utils/my_button.dart';
 
@@ -16,14 +18,14 @@ class DialogBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       backgroundColor: Colors.yellow[300],
-      content: Container(
+      content: SizedBox(
         height: 150,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             TextField(
               controller: controller,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   border: OutlineInputBorder(), hintText: 'Add a new task'),
             ),
             Row(
@@ -34,7 +36,7 @@ class DialogBox extends StatelessWidget {
                   textButton: 'Save',
                   onPressed: onSave,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 // Cancel button
